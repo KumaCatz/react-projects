@@ -1,3 +1,6 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import HomePage from './components/HomePage';
+import Navigation from './components/Navigation';
 import Welcome from './welcome/components/Welcome';
 import ActorCard from './actors/components/ActorCard';
 import Dogapi from './dogapi/components/Dogapi';
@@ -8,11 +11,15 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
-    <div className="App">
-      {/* <Welcome /> */}
-      <ActorCard />
-      {/* <Dogapi /> */}
-    </div>
+    <BrowserRouter>
+      <Navigation />
+      <Routes>
+        <Route path='/' element={<HomePage />} />
+        <Route path='/movies' element={ <MoviesList /> } />
+        <Route path='/dogs' element={ <Dogapi /> } />
+        <Route path='/actors' element={ <ActorCard /> } />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
