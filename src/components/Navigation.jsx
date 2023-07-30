@@ -11,7 +11,7 @@ function Navigation() {
           <Nav.Link onClick={() => navigate('/')}>Home</Nav.Link>
           <Nav.Link onClick={() => navigate('/movies')}>Movies</Nav.Link>
           <Nav.Link onClick={() => navigate('/dogs')}>Dogs</Nav.Link>
-          <Nav.Link onClick={() => navigate('/actors')}>Actors</Nav.Link>
+          <Nav.Link onClick={() => navigate('/actors/:id')}>Actors</Nav.Link>
         </Nav>
       </Container>
     </Navbar>

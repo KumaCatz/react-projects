@@ -1,23 +1,33 @@
 import { useState } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import fetchActor from './fetchActor';
-import FetchInput from './FetchInput';
-import CardSpread from './CardSpread';
+import ActorPage from "./ActorPage";
+    
 
 function ActorCard() {
+  const [search, setSearch] = useState('')
   const [actorsArray, setActorsArray] = useState([]);
 
-  async function handleChange(e) {
-    const fetchResults = await fetchActor(e.target.value);
-    setActorsArray(fetchResults);    
+  const changeSearch =  async (e) => {
+    const newSearch = e.target.value
+    setSearch(newSearch)
+
+    try {
+      const response = await fetch(`https://api.themoviedb.org/3/search/person?api_key=53d2ee2137cf3228aefae083c8158855&query=${search}`);
+      const data = await response.json();
+      setActorsArray(data.results)
+    } catch(e) {
+      console.log(e)
+    }
   }
 
   return (
     <>
-      <FetchInput handleChange={ handleChange } />
-      <CardSpread actorsArray={ actorsArray } />
+      <input type='text'
+      onChange={ changeSearch } />
+      {actorsArray.map((actor) => 
+        <ActorPage actor={ actor } />
+      )}
     </>
-  );
+  )
 }
 
 export default ActorCard;

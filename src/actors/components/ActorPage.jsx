@@ -1,5 +1,3 @@
-import { useNavigate } from 'react-router-dom';
-import { Routes, Route } from 'react-router-dom';
 import Card from 'react-bootstrap/Card';
 
 function ActorPage(props) {
