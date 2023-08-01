@@ -1,3 +1,11 @@
+:root {
+  --text-color: black;
+}
+
+* {
+  color: var(--text-color)
+}
+
 .App {
   text-align: center;
 }
