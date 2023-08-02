@@ -6,15 +6,12 @@ import '../App.css'
 function HomePage() {
     const { color, setColor } = useContext(textColor)
     function randomizeColor() {
-        var letters = '0123456789ABCDEF';
-        var color = '#';
+        const letters = '0123456789ABCDEF';
+        let color = '#';
         for (var i = 0; i < 6; i++) {
           color += letters[Math.floor(Math.random() * 16)];
         }
-        var allElements = document.getElementsByTagName("*");
-        for (var i = 0, len = allElements.length; i < len; i++) {
-            var element = allElements[i];
-        }    
+        console.log(color)
     }
 
     return (
