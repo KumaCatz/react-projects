@@ -6,6 +6,7 @@ import Welcome from './welcome/components/Welcome';
 import ActorCard from './actors/components/ActorCard';
 import Dogapi from './dogapi/components/Dogapi';
 import MoviesList from './movie/components/MoviesList';
+import Exercises from './exercises/Exercises';
 import Forms from './forms/components/Forms';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -30,6 +31,8 @@ function App() {
           </Routes>
         </textColor.Provider>
       </userContext.Provider>
+      <Exercises />
+
     </BrowserRouter>
   );
 }
