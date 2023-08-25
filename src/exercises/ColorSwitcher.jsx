@@ -12,7 +12,7 @@ function ColorSwitcher() {
         <option value='blue'>Blue</option>
         <option value='green'>Green</option>
       </select>
-      <div style={{backgroundColor: bgColor}}>
+      <div style={{backgroundColor: bgColor, width: '100px', height: '100px'}}>
         {/* Change the background color of this div */}
       </div>
     </div>
