@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import ColorSwitcher from "./ColorSwitcher";
 import SearchFilter from "./SearchFilter";
 import BigBinary from "./BigBinary";
+import AddCounter from "./AddCounter";
 
 function Exercises() {
   const [item, setItem] = useState('')
@@ -28,6 +29,7 @@ function Exercises() {
     <ColorSwitcher />
     <SearchFilter />
     <BigBinary />
+    <AddCounter />
     </>
   );
 }
