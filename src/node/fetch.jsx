@@ -1,16 +1,25 @@
 import axios from "axios"
 import { useState } from "react"
+import { GET } from "../utils/api"
 
 const FetchNode = () => {
   const url = 'http://localhost:2500/users'
   const [users, setUsers] = useState([])
+  const [value, setValue] = useState('')
 
   async function handleGetUsers() {
-    axios.get(url)
-      .then((response) => {
-        console.log(response.data)
-        setUsers(response.data)
-      })
+    const users = await GET('/users')
+    console.log(users)
+    
+    setUsers(users)
+  }
+
+  const handleAddUser = async () => {
+    const body = {
+      name: value
+    }
+    const resp = await axios.post(url, body)
+    setUsers([...users, resp])
   }
 
   return (
@@ -22,6 +31,8 @@ const FetchNode = () => {
         )
       } )
       : null }
+      <input type="text" onChange={(e) => setValue(e.target.value)} />
+      <button onClick={handleAddUser}>post</button>
     </div>
   )
 }
