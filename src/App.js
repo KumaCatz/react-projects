@@ -11,6 +11,7 @@ import Forms from './forms/components/Forms';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import FetchNode from './node/fetch';
+import { ReactNode } from './reactjsTeacher/ReactNode';
 
 export const userContext = createContext(null)
 export const textColor = createContext(null)
@@ -20,7 +21,8 @@ function App() {
   const [color, setColor] = useState('')
 
   return (
-    <FetchNode />
+    <ReactNode />
+    // <FetchNode />
     // <BrowserRouter>
     //   <userContext.Provider value={{ userName, setUserName }}>
     //     <textColor.Provider value={{ color, setColor }}>

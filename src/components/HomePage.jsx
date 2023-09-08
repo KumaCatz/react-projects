@@ -1,8 +1,6 @@
 import { textColor } from '../App';
 import { useContext } from 'react';
 
-import '../App.css'
-
 function HomePage() {
     const { color, setColor } = useContext(textColor)
     function randomizeColor() {
