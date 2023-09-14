@@ -11,7 +11,6 @@ import Forms from './forms/components/Forms';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import FetchNode from './node/fetch';
-import { ReactNode } from './reactjsTeacher/ReactNode';
 
 export const userContext = createContext(null)
 export const textColor = createContext(null)
@@ -21,23 +20,22 @@ function App() {
   const [color, setColor] = useState('')
 
   return (
-    <ReactNode />
-    // <FetchNode />
-    // <BrowserRouter>
-    //   <userContext.Provider value={{ userName, setUserName }}>
-    //     <textColor.Provider value={{ color, setColor }}>
-    //       <Navigation />
-    //       <Routes>
-    //         <Route path='/' element={<HomePage />} />
-    //         <Route path='/movies' element={ <MoviesList /> } />
-    //         <Route path='/dogs' element={ <Dogapi /> } />
-    //         <Route path='/actors/:id' element={ <ActorCard /> } />
-    //       </Routes>
-    //     </textColor.Provider>
-    //   </userContext.Provider>
-    //   <Exercises />
+    <BrowserRouter>
+      <userContext.Provider value={{ userName, setUserName }}>
+        <textColor.Provider value={{ color, setColor }}>
+          <Navigation />
+          <Routes>
+            <Route path='/' element={<HomePage />} />
+            <Route path='/movies' element={ <MoviesList /> } />
+            <Route path='/dogs' element={ <Dogapi /> } />
+            <Route path='/actors/:id' element={ <ActorCard /> } />
+            <Route path='/nodejs' element={ <FetchNode /> } />
+          </Routes>
+        </textColor.Provider>
+      </userContext.Provider>
+      <Exercises />
 
-    // </BrowserRouter>
+    </BrowserRouter>
   );
 }
 
